@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מדריך משימות אינטראקטיבי ללימוד Repath ואיור וקטורי</title>
+    <!-- Tailwind CSS for modern and clean UI -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts for Hebrew support -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Heebo', sans-serif;
+        }
+        .step-checkbox:checked + span {
+            text-decoration: line-through;
+            color: #9ca3af;
+        }
+        @keyframes tuvia-glow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(219, 39, 119, 0.55); }
+            50% { box-shadow: 0 0 0 14px rgba(219, 39, 119, 0); }
+        }
+        .tuvia-fab {
+            animation: tuvia-glow 2.2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen">
+
+    <!-- Toviya Bot Floating Button -->
+    <a href="https://gemini.google.com/gem/182jqjh6fxGeiMJ3R2si6dovgXIugR93N?usp=sharing" target="_blank" rel="noopener"
+       class="tuvia-fab fixed bottom-6 left-6 z-50 flex items-center gap-3 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-500 hover:to-purple-500 text-white font-bold px-5 py-4 rounded-full shadow-2xl transition duration-300 transform hover:scale-105">
+        <span class="text-2xl">🤖</span>
+        <span class="text-sm md:text-base">תקוע/ה? דברו עם טוביה - הבוט שמלווה אתכם במשימה</span>
+    </a>
+
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-pink-600 to-purple-600 text-white shadow-md">
+        <div class="max-w-6xl mx-auto px-6 py-8 text-center md:text-right flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <h1 class="text-3xl md:text-4xl font-black mb-2">שליטה במסלולים וקווים (Repath)</h1>
+                <p class="text-lg text-pink-100 font-light">מדריך משימות אינטראקטיבי ללימוד כלי העט, נקודות אחיזה ואיור וקטורי</p>
+            </div>
+            <a href="https://app.repath.studio/" target="_blank" rel="noopener"
+               class="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold px-6 py-3 rounded-full shadow-lg inline-flex items-center gap-2 transition-all duration-300 transform hover:scale-105">
+                <span>פתח את Repath Studio</span>
+                <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-6xl mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-4 gap-8">
+        
+        <!-- Sidebar / Toolbox & Overview -->
+        <aside class="lg:col-span-1 space-y-6">
+            
+            <!-- Quick Intro -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                <h3 class="text-lg font-bold text-slate-900 mb-2">הסבר קצר לתלמיד</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">
+                    מסלולים וקווים וקטוריים הם כלי קסום! בעזרתם אפשר לצייר כל דבר בעולם בדיוק מוחלט. 
+                    במשימות אלו נלמד לשלוט ב<strong>כלי העט (Pen Tool)</strong>, לערוך נקודות אחיזה (Anchors) ולשנות נתיבים קיימים בקלות.
+                    סמנו <span class="text-pink-600 font-bold">V</span> בכל שלב שתסיימו כדי לראות את ההתקדמות שלכם!
+                </p>
+            </div>
+
+            <!-- Path Tool Guide -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2 text-pink-600">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
+                    </svg>
+                    קיצורי דרך סופר-חשובים
+                </h3>
+                <ul class="space-y-3 text-sm text-slate-600">
+                    <li class="flex justify-between border-b pb-1">
+                        <span class="font-bold text-slate-800">P</span>
+                        <span>כלי העט (Pen Tool)</span>
+                    </li>
+                    <li class="flex justify-between border-b pb-1">
+                        <span class="font-bold text-slate-800">A</span>
+                        <span>בחירת נקודות (Direct Selection)</span>
+                    </li>
+                    <li class="flex justify-between border-b pb-1">
+                        <span class="font-bold text-slate-800">Alt</span>
+                        <span>לחיצה ממושכת לשבירת זווית הידית</span>
+                    </li>
+                    <li class="flex justify-between border-b pb-1">
+                        <span class="font-bold text-slate-800">Shift</span>
+                        <span>נעילת קו ישר (לפי 45 או 90 מעלות)</span>
+                    </li>
+                    <li class="flex justify-between border-b pb-1">
+                        <span class="font-bold text-slate-800">Ctrl + Z</span>
+                        <span>ביטול נקודה אחרונה שנוצרה</span>
+                    </li>
+                    <li class="flex justify-between border-b pb-1">
+                        <span class="font-bold text-slate-800">Enter</span>
+                        <span>סיום ציור הקו הנוכחי בלי לסגור אותו</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Progress Card -->
+            <div class="bg-pink-50 p-6 rounded-2xl border border-pink-100 text-center">
+                <h3 class="text-sm font-bold text-pink-900 uppercase tracking-wider mb-2">מד התקדמות במסלולים</h3>
+                <div class="relative pt-1">
+                    <div class="flex mb-2 items-center justify-between">
+                        <div>
+                            <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200" id="progress-badge">
+                                0% הושלם
+                            </span>
+                        </div>
+                    </div>
+                    <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-pink-200">
+                        <div id="progress-bar" style="width: 0%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-pink-600 transition-all duration-500"></div>
+                    </div>
+                </div>
+                <button onclick="resetAll()" class="text-xs text-pink-600 hover:text-pink-800 underline font-medium focus:outline-none">איפוס כל המשימות</button>
+            </div>
+        </aside>
+
+        <!-- Tasks Content Area -->
+        <section class="lg:col-span-3 space-y-8">
+            
+            <!-- TASK 1 -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden task-card" id="task1">
+                <div class="p-6 bg-amber-50 border-b border-amber-100 flex justify-between items-center">
+                    <div class="flex items-center gap-3">
+                        <span class="bg-amber-500 text-white font-black text-lg w-8 h-8 rounded-full flex items-center justify-center">1</span>
+                        <div>
+                            <h2 class="text-xl font-bold text-slate-900">משימה 1: קווים ישרים וצורות קשיחות (נקודות פינה)</h2>
+                            <p class="text-sm text-slate-500">נושא מרכזי: קליקים בודדים ויצירת צלעות | זמן משוער: 15 דקות</p>
+                        </div>
+                    </div>
+                    <span class="text-xs font-semibold bg-amber-100 text-amber-800 px-3 py-1 rounded-full">רמת בסיס</span>
+                </div>
+                
+                <div class="p-6 space-y-6">
+                    <p class="text-slate-600 leading-relaxed">
+                        נבין כיצד קווים וקטוריים עובדים! קו וקטורי מורכב מנקודות (Anchor Points) המחוברות ביניהן. במשימה זו נתרגל יצירת קווים ישרים וצורות פשוטות רק על ידי לחיצה (קליק) בלי לגרור את העכבר.
+                    </p>
+
+                    <!-- Steps List -->
+                    <div class="space-y-4">
+                        <h4 class="font-bold text-slate-900 text-sm uppercase tracking-wide border-b pb-2">שלבי המשימה:</h4>
+                        
+                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-pink-600 focus:ring-pink-500" onchange="updateProgress()">
+                            <span class="text-slate-700 text-sm">
+                                <strong>צעד 1:</strong> פתחו מסמך וקטורי חדש ובחרו ב<strong>כלי העט (Pen Tool)</strong> על ידי לחיצה על האות <kbd class="px-2 py-1 bg-slate-100 border rounded text-xs">P</kbd> במקלדת.
+                            </span>
+                        </label>
+
+                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-pink-600 focus:ring-pink-500" onchange="updateProgress()">
+                            <span class="text-slate-700 text-sm">
+                                <strong>צעד 2:</strong> עשו לחיצה בודדת (קליק) במסך. נוצרה הנקודה הראשונה שלכם. כעת הזיזו את העכבר (בלי לגרור) ועשו קליק שני במרחק מה. ראיתם איך נוצר קו ישר מושלם ביניהן?
+                            </span>
+                        </label>
+
+                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-pink-600 focus:ring-pink-500" onchange="updateProgress()">
+                            <span class="text-slate-700 text-sm">
+                                <strong>צעד 3:</strong> ציירו משולש! עשו קליק שלישי למעלה, ואז החזירו את העכבר אל הנקודה הראשונה שיצרתם. כשהסמן משתנה ומציג עיגול קטן ליד העט, עשו קליק כדי "לסגור את הצורה".
+                            </span>
+                        </label>
+
+                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-pink-600 focus:ring-pink-500" onchange="updateProgress()">
+                            <span class="text-slate-700 text-sm">
+                                <strong>צעד 4:</strong> תנו צבע למשולש שלכם! בחלונית המאפיינים מצד ימין, שנו את צבע המילוי (Fill) לצבע כחול, ואת צבע קו המתאר (Stroke) לשחור בעובי 4 פיקסלים.
+                            </span>
+                        </label>
+
+                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-pink-600 focus:ring-pink-500" onchange="updateProgress()">
+                            <span class="text-slate-700 text-sm">
+                                <strong>צעד 5:</strong> כעת ננסה לצייר כוכב פשוט בעל 5 קודקודים. עשו קליקים מדויקים לפי סדר הקצוות, וסגרו את הצורה בנקודת ההתחלה.
+                            </span>
+                        </label>
+                    </div>
+
+                    <!-- Visual Tip -->
+                    <div class="bg-amber-50 p-4 rounded-xl border border-amber-200 text-amber-900 text-xs flex gap-2 items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span><strong>טיפ זהב לקווים ישרים:</strong> אם תחזיקו את מקש <kbd class="px-1 bg-white border rounded text-xs">Shift</kbd> לחוץ בזמן הקליקים, התוכנה תנעל את הקווים שלכם בדיוק בזוויות ישרות או של 45 מעלות! מעולה לציור בניינים ומבנים מדויקים.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TASK 2 -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden task-card" id="task2">
+                <div class="p-6 bg-emerald-50 border-b border-emerald-100 flex justify-between items-center">
+                    <div class="flex items-center gap-3">
+                        <span class="bg-emerald-500 text-white font-black text-lg w-8 h-8 rounded-full flex items-center justify-center">2</span>
+                        <div>
+                            <h2 class="text-xl font-bold text-slate-900">משימה 2: יצירת קימורים מושלמים (ידיות בזייר)</h2>
+                            <p class="text-sm text-slate-500">נושא מרכזי: לחיצה וגרירה (Click & Drag) | זמן משוער: 20 דקות</p>
+                        </div>
+                    </div>
+                    <span class="text-xs font-semibold bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full">משימת מיומנות</span>
+                </div>
+                
+                <div class="p-6 space-y-6">
+                    <p class="text-slate-600 leading-relaxed">
+                        קווים ישרים זה קל, אבל איך יוצרים קימורים (Curves)? כדי ליצור קו מעוגל, אנחנו צריכים **ללחוץ ולגרור** את העכבר בלי לעזוב. הגרירה מושכת החוצה "ידיות שליטה" (Bezier Handles) שקובעות את כיוון ועוצמת הסיבוב של הקו.
+                    </p>
+
+                    <!-- Steps List -->
+                    <div class="space-y-4">
+                        <h4 class="font-bold text-slate-900 text-sm uppercase tracking-wide border-b pb-2">שלבי המשימה:</h4>
+                        
+                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-pink-600 focus:ring-pink-500" onchange="updateProgress()">
+                            <span class="text-slate-700 text-sm">
+                                <strong>צעד 1:</strong> בחרו שוב ב<strong>כלי העט (Pen Tool)</strong> ועשו קליק ראשון פשוט בצידו השמאלי של המסך.
+                            </span>
+                        </label>
+
+                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-pink-600 focus:ring-pink-500" onchange="updateProgress()">
+                            <span class="text-slate-700 text-sm">
+                                <strong>צעד 2:</strong> עברו לצידו הימני של המסך, עשו קליק שני אבל <strong>אל תשחררו את כפתור העכבר!</strong> כעת גררו את העכבר כלפי מטה. ראו איך הקו הופך לקשת עגולה ויפה!
+                            </span>
+                        </label>
+
+                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-pink-600 focus:ring-pink-500" onchange="updateProgress()">
+                            <span class="text-slate-700 text-sm">
+                                <strong>צעד 3:</strong> כעת נסו ליצור צורת גל (S). עשו קליק ראשון וגררו מעט למעלה (נוצרה נקודה עם ידיות). עברו ימינה, עשו קליק וגררו למטה. עברו עוד ימינה, קליק וגררו למעלה. קיבלתם גל ים זורם!
+                            </span>
+                        </label>
+
+                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-pink-600 focus:ring-pink-500" onchange="updateProgress()">
+                            <span class="text-slate-700 text-sm">
+                                <strong>צעד 4:</strong> לחצו על מקש <kbd class="px-2 py-1 bg-slate-100 border rounded text-xs">Enter</kbd> כדי לסיים את ציור קו הגל שלכם בלי לסגור אותו לצורה מלאה.
+                            </span>
+                        </label>
+
+                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-pink-600 focus:ring-pink-500" onchange="updateProgress()">
+                            <span class="text-slate-700 text-sm">
+                                <strong>צעד 5:</strong> עברו לכלי <strong>בחירת הנקודות (Direct Selection Tool / האות A)</strong>, לחצו על אחת הנקודות שבניתם בגל, וגררו את אחת ה"ידיות" (הקצוות העגולים הקטנים) כדי לשנות את הקימור של הקו בדיעבד.
+                            </span>
+                        </label>
+                    </div>
+
+                    <!-- Visual Tip -->
+                    <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-200 text-emerald-900 text-xs flex gap-2 items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span><strong>סוד השליטה בקימורים:</strong> ככל שתגררו את הידית רחוק יותר מהנקודה, הקימור יהיה רחב וגדול יותר. תמיד גררו את הידית לכיוון אליו אתם רוצים שהקו שלכם ימשיך לזרום.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TASK 3 -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden task-card" id="task3">
+                <div class="p-6 bg-blue-50 border-b border-blue-100 flex justify-between items-center">
+                    <div class="flex items-center gap-3">
+                        <span class="bg-blue-500 text-white font-black text-lg w-8 h-8 rounded-full flex items-center justify-center">3</span>
+                        <div>
+                            <h2 class="text-xl font-bold text-slate-900">משימה 3: מעקב ושינוי נתיב של אייקון (Tracing & Repathing)</h2>
+                            <p class="text-sm text-slate-500">נושא מרכזי: עבודה מעל שכבת עזר | זמן משוער: 25 דקות</p>
+                        </div>
+                    </div>
+                    <span class="text-xs font-semibold bg-blue-100 text-blue-800 px-3 py-1 rounded-full">משימת דיוק</span>
+                </div>
+                
+                <div class="p-6 space-y-6">
+                    <p class="text-slate-600 leading-relaxed">
+                        העבודה הנפוצה ביותר של מעצבים גרפיים היא "מעקב נתיב" (Tracing / Repathing) - לקיחת סקיצה מצוירת ביד או לוגו מטושטש, ומעבר עליהם עם כלי העט כדי להפוך אותם לקובץ וקטורי חד ומושלם.
+                    </p>
+
+                    <!-- Steps List -->
+                    <div class="space-y-4">
+                        <h4 class="font-bold text-slate-900 text-sm uppercase tracking-wide border-b pb-2">שלבי המשימה:</h4>
+                        
+                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-pink-600 focus:ring-pink-500" onchange="updateProgress()">
+                            <span class="text-slate-700 text-sm">
+                                <strong>צעד 1:</strong> מצאו או ייבאו למסמך תמונה פשוטה של <strong>לב</strong> או <strong>ענן</strong> מהאינטרנט. הקטינו את השקיפות (Opacity) של השכבה ל-40% ונעלו אותה כדי שלא תזוז.
+                            </span>
+                        </label>
+
+                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-pink-600 focus:ring-pink-500" onchange="updateProgress()">
+                            <span class="text-slate-700 text-sm">
+                                <strong>צעד 2:</strong> בחרו בכלי העט (Pen Tool) והתחילו לצייר מעל התבנית המטושטשת. אם בחרתם בלב, התחילו מהשפיץ התחתון של הלב (נקודת פינה ישרה - קליק בודד).
+                            </span>
+                        </label>
+
+                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-pink-600 focus:ring-pink-500" onchange="updateProgress()">
+                            <span class="text-slate-700 text-sm">
+                                <strong>צעד 3:</strong> עברו לקשת השמאלית של הלב, עשו קליק וגררו שמאלה ולמעלה כדי לייצר את הקימור של ראש הלב.
+                            </span>
+                        </label>
+
+                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-pink-600 focus:ring-pink-500" onchange="updateProgress()">
+                            <span class="text-slate-700 text-sm">
+                                <strong>צעד 4:</strong> כעת אנחנו צריכים להגיע לשקע המרכזי של הלב - שבו יש זווית חדה! החזיקו את מקש <kbd class="px-1 bg-white border rounded text-xs">Alt</kbd> ולחצו על הנקודה האחרונה שיצרתם כדי "לחתוך" את אחת הידיות שלה ולמנוע קימור בצעד הבא.
+                            </span>
+                        </label>
+
+                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-pink-600 focus:ring-pink-500" onchange="updateProgress()">
+                            <span class="text-slate-700 text-sm">
+                                <strong>צעד 5:</strong> המשיכו לצייר את חצי הלב השני בצורה סימטרית וסגרו את הצורה בנקודת ההתחלה התחתונה. כעת הסתירו את שכבת העזר המקורית ותראו איזה לב וקטורי מדהים יצרתם!
+                            </span>
+                        </label>
+                    </div>
+
+                    <!-- Visual Tip -->
+                    <div class="bg-blue-50 p-4 rounded-xl border border-blue-200 text-blue-900 text-xs flex gap-2 items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span><strong>כלל פחות זה יותר:</strong> ככל שתשתמשו בפחות נקודות אחיזה לציור הצורה שלכם, כך המסלול הוקטורי יהיה חלק, נקי ומקצועי יותר ללא בליטות לא רצויות.</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TASK 4: CHALLENGE -->
+            <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden task-card" id="task4">
+                <div class="p-6 bg-purple-50 border-b border-purple-100 flex justify-between items-center">
+                    <div class="flex items-center gap-3">
+                        <span class="bg-purple-500 text-white font-black text-lg w-8 h-8 rounded-full flex items-center justify-center">★</span>
+                        <div>
+                            <h2 class="text-xl font-bold text-slate-900">משימת אתגר: איור שועל גיאומטרי בסגנון אוריגמי</h2>
+                            <p class="text-sm text-slate-500">נושא מרכזי: מסלולים סגורים מצטלבים | זמן משוער: 30 דקות</p>
+                        </div>
+                    </div>
+                    <span class="text-xs font-semibold bg-purple-100 text-purple-800 px-3 py-1 rounded-full">אתגר מסכם שלם</span>
+                </div>
+                
+                <div class="p-6 space-y-6">
+                    <p class="text-slate-600 leading-relaxed">
+                        במשימה המסכמת הזו, נשתמש בנקודות אחיזה משותפות כדי לצייר איור אוריגמי יפהפה של שועל. איור אוריגמי בנוי ממספר רב של משולשים ומרובעים צמודים היוצרים יחד תלת-מימד עדין בעזרת גוונים שונים.
+                    </p>
+
+                    <!-- Steps List -->
+                    <div class="space-y-4">
+                        <h4 class="font-bold text-slate-900 text-sm uppercase tracking-wide border-b pb-2">שלבי המשימה:</h4>
+                        
+                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-pink-600 focus:ring-pink-500" onchange="updateProgress()">
+                            <span class="text-slate-700 text-sm">
+                                <strong>צעד 1:</strong> ציירו קודם כל משולש הפוך וגדול במרכז המסך שיהווה את פני השועל. צבעו אותו בכתום בהיר (Orange).
+                            </span>
+                        </label>
+
+                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-pink-600 focus:ring-pink-500" onchange="updateProgress()">
+                            <span class="text-slate-700 text-sm">
+                                <strong>צעד 2:</strong> כדי לצייר את האוזן השמאלית, בחרו את כלי העט (Pen Tool). עשו קליק ראשון <strong>בדיוק</strong> על הפינה השמאלית העליונה של הפנים (העט יינעל לנקודה הקיימת).
+                            </span>
+                        </label>
+
+                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-pink-600 focus:ring-pink-500" onchange="updateProgress()">
+                            <span class="text-slate-700 text-sm">
+                                <strong>צעד 3:</strong> עשו קליק שני גבוה יותר למעלה (קודקוד האוזן), קליק שלישי מעט ימינה, וסגרו את האוזן חזרה בחיבור לפנים. צבעו את האוזן בכתום כהה יותר כדי לייצר צל.
+                            </span>
+                        </label>
+
+                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-pink-600 focus:ring-pink-500" onchange="updateProgress()">
+                            <span class="text-slate-700 text-sm">
+                                <strong>צעד 4:</strong> חזרו על הפעולה בצד ימין כדי ליצור את האוזן הימנית הסימטרית (השתמשו בצבע כתום בהיר או כהה יותר בהתאם לכיוון האור הדמיוני).
+                            </span>
+                        </label>
+
+                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-pink-600 focus:ring-pink-500" onchange="updateProgress()">
+                            <span class="text-slate-700 text-sm">
+                                <strong>צעד 5:</strong> בתחתית פני השועל (בשפיץ התחתון), ציירו משולש קטנטן בצבע שחור שיהווה את האף של השועל.
+                            </span>
+                        </label>
+
+                        <label class="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 cursor-pointer transition">
+                            <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded border-slate-300 text-pink-600 focus:ring-pink-500" onchange="updateProgress()">
+                            <span class="text-slate-700 text-sm">
+                                <strong>צעד 6:</strong> יצאו את יצירת האומנות הווקטורית שלכם לקובץ מסוג <strong>SVG</strong> או תמונת <strong>PNG</strong> כדי לשתף בכיתה!
+                            </span>
+                        </label>
+                    </div>
+
+                    <!-- Visual Tip -->
+                    <div class="bg-purple-50 p-4 rounded-xl border border-purple-200 text-purple-900 text-xs flex gap-2 items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span><strong>רעיון לשדרוג:</strong> עיצוב אוריגמי נראה הכי טוב כאשר אין לו קווי מתאר בכלל! סמנו את כל חלקי השועל והגדירו את ה-Stroke ל-None (ללא קו מתאר) כדי שחלקי השעשוע יתחברו בצורה מושלמת.</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 mt-16 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-6 text-center space-y-4">
+            <p class="text-sm">מדריך משימות זה נבנה במיוחד עבור מורים ותלמידים המעוניינים לרכוש את "מיומנות העל" של העיצוב הוקטורי.</p>
+            <p class="text-xs text-slate-500">&copy; 2026 כל הזכויות שמורות. מוגש באהבה לקהילת החינוך והעיצוב.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Logic (JavaScript) -->
+    <script>
+        function updateProgress() {
+            const checkboxes = document.querySelectorAll('.step-checkbox');
+            const totalSteps = checkboxes.length;
+            let checkedSteps = 0;
+
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    checkedSteps++;
+                }
+            });
+
+            // Calculate percentage
+            const percentage = totalSteps > 0 ? Math.round((checkedSteps / totalSteps) * 100) : 0;
+
+            // Update UI elements
+            const progressBar = document.getElementById('progress-bar');
+            const progressBadge = document.getElementById('progress-badge');
+
+            progressBar.style.width = percentage + '%';
+            progressBadge.innerText = percentage + '% הושלם';
+
+            // Change colors of badge based on progress
+            if (percentage === 100) {
+                progressBadge.className = "text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-green-600 bg-green-200 animate-bounce";
+                progressBadge.innerText = "אלופי הוקטורים! סיימתם הכל! 🎉";
+                progressBar.className = "shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-500 transition-all duration-500";
+            } else if (percentage > 50) {
+                progressBadge.className = "text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200";
+                progressBar.className = "shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-pink-500 transition-all duration-500";
+            } else {
+                progressBadge.className = "text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-pink-600 bg-pink-200";
+                progressBar.className = "shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-pink-600 transition-all duration-500";
+            }
+
+            // Save state in session memory
+            const states = Array.from(checkboxes).map(cb => cb.checked);
+            sessionStorage.setItem('repath_progress', JSON.stringify(states));
+        }
+
+        function resetAll() {
+            const checkboxes = document.querySelectorAll('.step-checkbox');
+            checkboxes.forEach(cb => cb.checked = false);
+            updateProgress();
+            sessionStorage.removeItem('repath_progress');
+        }
+
+        // Restore progress on page load
+        window.onload = function() {
+            const savedProgress = sessionStorage.getItem('repath_progress');
+            if (savedProgress) {
+                const states = JSON.parse(savedProgress);
+                const checkboxes = document.querySelectorAll('.step-checkbox');
+                checkboxes.forEach((cb, index) => {
+                    if (states[index] !== undefined) {
+                        cb.checked = states[index];
+                    }
+                });
+                updateProgress();
+            }
+        };
+    </script>
+</body>
+</html>

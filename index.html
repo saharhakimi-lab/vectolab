@@ -92,40 +92,41 @@
                 </p>
             </div>
 
-            <!-- Path Tool Guide -->
-            <div class="bg-white rounded-3xl p-6 card-shadow border border-stone-100">
-                <h3 class="text-lg font-black text-stone-900 mb-4 flex items-center gap-2 text-purple-600">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <!-- Path Tool Guide - Compact Floating-style Card -->
+            <div class="bg-gradient-to-br from-stone-900 to-stone-800 text-white rounded-3xl p-5 card-shadow border border-stone-700 relative overflow-hidden">
+                <div class="absolute -left-6 -bottom-6 w-24 h-24 bg-purple-500/10 rounded-full blur-xl pointer-events-none"></div>
+                <h3 class="text-sm font-black text-purple-300 mb-3 flex items-center gap-2 tracking-wider uppercase">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
                     </svg>
-                    קיצורי דרך סופר-חשובים
+                    קיצורי מקשים מהירים
                 </h3>
-                <ul class="space-y-3 text-sm text-stone-600 font-semibold">
-                    <li class="flex justify-between border-b border-stone-100 pb-2">
-                        <span class="font-black text-stone-900 bg-amber-100 px-2 py-0.5 rounded-lg">P</span>
-                        <span>כלי העט (Pen Tool)</span>
-                    </li>
-                    <li class="flex justify-between border-b border-stone-100 pb-2">
-                        <span class="font-black text-stone-900 bg-amber-100 px-2 py-0.5 rounded-lg">A</span>
-                        <span>בחירת נקודות (Direct Selection)</span>
-                    </li>
-                    <li class="flex justify-between border-b border-stone-100 pb-2">
-                        <span class="font-black text-stone-900 bg-amber-100 px-2 py-0.5 rounded-lg">Alt</span>
-                        <span>לחיצה ממושכת לשבירת זווית הידית</span>
-                    </li>
-                    <li class="flex justify-between border-b border-stone-100 pb-2">
-                        <span class="font-black text-stone-900 bg-amber-100 px-2 py-0.5 rounded-lg">Shift</span>
-                        <span>נעילת קו ישר (לפי 45 או 90 מעלות)</span>
-                    </li>
-                    <li class="flex justify-between border-b border-stone-100 pb-2">
-                        <span class="font-black text-stone-900 bg-amber-100 px-2 py-0.5 rounded-lg">Ctrl + Z</span>
-                        <span>ביטול נקודה אחרונה שנוצרה</span>
-                    </li>
-                    <li class="flex justify-between border-b border-stone-100 pb-2">
-                        <span class="font-black text-stone-900 bg-amber-100 px-2 py-0.5 rounded-lg">Enter</span>
-                        <span>סיום ציור הקו הנוכחי בלי לסגור אותו</span>
-                    </li>
-                </ul>
+                <div class="grid grid-cols-2 gap-2 text-xs font-semibold">
+                    <div class="bg-white/10 p-2 rounded-xl flex justify-between items-center backdrop-blur-xs">
+                        <span class="text-stone-300">כלי העט</span>
+                        <span class="font-black text-amber-300 bg-black/30 px-1.5 py-0.5 rounded">P</span>
+                    </div>
+                    <div class="bg-white/10 p-2 rounded-xl flex justify-between items-center backdrop-blur-xs">
+                        <span class="text-stone-300">בחירת נקודה</span>
+                        <span class="font-black text-amber-300 bg-black/30 px-1.5 py-0.5 rounded">A</span>
+                    </div>
+                    <div class="bg-white/10 p-2 rounded-xl flex justify-between items-center backdrop-blur-xs">
+                        <span class="text-stone-300">שבירת ידית</span>
+                        <span class="font-black text-amber-300 bg-black/30 px-1.5 py-0.5 rounded">Alt</span>
+                    </div>
+                    <div class="bg-white/10 p-2 rounded-xl flex justify-between items-center backdrop-blur-xs">
+                        <span class="text-stone-300">נעילת קו ישר</span>
+                        <span class="font-black text-amber-300 bg-black/30 px-1.5 py-0.5 rounded">Shift</span>
+                    </div>
+                    <div class="bg-white/10 p-2 rounded-xl flex justify-between items-center backdrop-blur-xs">
+                        <span class="text-stone-300">ביטול צעד</span>
+                        <span class="font-black text-amber-300 bg-black/30 px-1.5 py-0.5 rounded">Ctrl+Z</span>
+                    </div>
+                    <div class="bg-white/10 p-2 rounded-xl flex justify-between items-center backdrop-blur-xs">
+                        <span class="text-stone-300">סיום קו</span>
+                        <span class="font-black text-amber-300 bg-black/30 px-1.5 py-0.5 rounded">Enter</span>
+                    </div>
+                </div>
             </div>
 
             <!-- Progress Card -->

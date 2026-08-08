@@ -50,12 +50,11 @@
         <div class="max-w-7xl mx-auto px-4 py-3 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
             
             <!-- לוגו וכותרת -->
-            <div class="flex items-center gap-3">
-                <!-- לוגו REPATH המעודכן מהקישור -->
-                <!-- לוגו REPATH מתוקן ומשודרג -->
-<div class="w-12 h-12 bg-purple-600 rounded-2xl p-2 shadow-md rotate-[-2deg] flex items-center justify-center shrink-0">
-    <img src="https://drive.google.com/file/d/1v2wtAwnyV1_uYDxmqcZa8SRuIb0VTYQa/view?usp=drivesdk" alt="Repath Logo" class="w-full h-full object-contain filter brightness-0 invert">
-</div>
+            <div class="flex items-center gap-4">
+                <!-- לוגו REPATH מתוקן, משודרג ומוגדל -->
+                <div class="w-16 h-16 bg-purple-600 rounded-2xl p-3 shadow-md rotate-[-2deg] flex items-center justify-center shrink-0">
+                    <img src="https://drive.google.com/file/d/1v2wtAwnyV1_uYDxmqcZa8SRuIb0VTYQa/view?usp=drivesdk" alt="Repath Logo" class="w-full h-full object-contain filter brightness-0 invert">
+                </div>
 
                 <div>
                     <h1 class="text-xl sm:text-2xl font-black text-stone-900 leading-tight">שליטה במסלולים וקווים (Repath) 🎨</h1>
@@ -148,11 +147,27 @@
             </div>
         </aside>
 
-        <!-- Tasks Content Area -->
-        <section class="lg:col-span-8 space-y-8">
+        <!-- Tasks Content Area with Tabs -->
+        <section class="lg:col-span-8 space-y-6">
             
+            <!-- Tab Navigation Buttons -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-white p-3 rounded-3xl card-shadow border border-stone-100">
+                <button onclick="switchTab(1)" id="tab-btn-1" class="tab-btn font-black text-sm py-3 px-4 rounded-2xl transition-all duration-200 bg-purple-600 text-white shadow-md">
+                    משימה 1 📐
+                </button>
+                <button onclick="switchTab(2)" id="tab-btn-2" class="tab-btn font-black text-sm py-3 px-4 rounded-2xl transition-all duration-200 bg-stone-100 text-stone-600 hover:bg-stone-200">
+                    משימה 2 🌊
+                </button>
+                <button onclick="switchTab(3)" id="tab-btn-3" class="tab-btn font-black text-sm py-3 px-4 rounded-2xl transition-all duration-200 bg-stone-100 text-stone-600 hover:bg-stone-200">
+                    משימה 3 🤍
+                </button>
+                <button onclick="switchTab(4)" id="tab-btn-4" class="tab-btn font-black text-sm py-3 px-4 rounded-2xl transition-all duration-200 bg-stone-100 text-stone-600 hover:bg-stone-200">
+                    אתגר שועל פואטי 🦊
+                </button>
+            </div>
+
             <!-- TASK 1 -->
-            <div class="bg-white rounded-3xl card-shadow border border-stone-100 overflow-hidden transition-all" id="task1">
+            <div class="task-content bg-white rounded-3xl card-shadow border border-stone-100 overflow-hidden transition-all" id="task-content-1">
                 <div class="p-6 bg-amber-50/60 border-b border-amber-100 flex justify-between items-center">
                     <div class="flex items-center gap-3">
                         <span class="bg-amber-500 text-white font-black text-lg w-9 h-9 rounded-2xl flex items-center justify-center shadow-xs">1</span>
@@ -218,7 +233,7 @@
             </div>
 
             <!-- TASK 2 -->
-            <div class="bg-white rounded-3xl card-shadow border border-stone-100 overflow-hidden transition-all" id="task2">
+            <div class="task-content bg-white rounded-3xl card-shadow border border-stone-100 overflow-hidden transition-all hidden" id="task-content-2">
                 <div class="p-6 bg-emerald-50/60 border-b border-emerald-100 flex justify-between items-center">
                     <div class="flex items-center gap-3">
                         <span class="bg-emerald-500 text-white font-black text-lg w-9 h-9 rounded-2xl flex items-center justify-center shadow-xs">2</span>
@@ -284,7 +299,7 @@
             </div>
 
             <!-- TASK 3 -->
-            <div class="bg-white rounded-3xl card-shadow border border-stone-100 overflow-hidden transition-all" id="task3">
+            <div class="task-content bg-white rounded-3xl card-shadow border border-stone-100 overflow-hidden transition-all hidden" id="task-content-3">
                 <div class="p-6 bg-blue-50/60 border-b border-blue-100 flex justify-between items-center">
                     <div class="flex items-center gap-3">
                         <span class="bg-blue-500 text-white font-black text-lg w-9 h-9 rounded-2xl flex items-center justify-center shadow-xs">3</span>
@@ -350,7 +365,7 @@
             </div>
 
             <!-- TASK 4: CHALLENGE -->
-            <div class="bg-white rounded-3xl card-shadow border border-stone-100 overflow-hidden transition-all" id="task4">
+            <div class="task-content bg-white rounded-3xl card-shadow border border-stone-100 overflow-hidden transition-all hidden" id="task-content-4">
                 <div class="p-6 bg-purple-50/60 border-b border-purple-100 flex justify-between items-center">
                     <div class="flex items-center gap-3">
                         <span class="bg-purple-600 text-white font-black text-lg w-9 h-9 rounded-2xl flex items-center justify-center shadow-xs">★</span>
@@ -433,6 +448,25 @@
 
     <!-- Interactive Logic (JavaScript) -->
     <script>
+        function switchTab(tabNumber) {
+            // Hide all tab contents
+            for (let i = 1; i <= 4; i++) {
+                const content = document.getElementById('task-content-' + i);
+                const btn = document.getElementById('tab-btn-' + i);
+                if (content) content.classList.add('hidden');
+                if (btn) {
+                    btn.className = "tab-btn font-black text-sm py-3 px-4 rounded-2xl transition-all duration-200 bg-stone-100 text-stone-600 hover:bg-stone-200";
+                }
+            }
+            // Show selected tab content
+            const activeContent = document.getElementById('task-content-' + tabNumber);
+            const activeBtn = document.getElementById('tab-btn-' + tabNumber);
+            if (activeContent) activeContent.classList.remove('hidden');
+            if (activeBtn) {
+                activeBtn.className = "tab-btn font-black text-sm py-3 px-4 rounded-2xl transition-all duration-200 bg-purple-600 text-white shadow-md";
+            }
+        }
+
         function updateProgress() {
             const checkboxes = document.querySelectorAll('.step-checkbox');
             const totalSteps = checkboxes.length;
@@ -459,9 +493,6 @@
                 progressBadge.className = "text-xs font-black inline-block py-1 px-3 uppercase rounded-full text-emerald-800 bg-emerald-200 animate-bounce";
                 progressBadge.innerText = "אלופי הוקטורים! סיימתם הכל! 🎉";
                 progressBar.className = "shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-emerald-500 transition-all duration-500";
-            } else if (percentage > 50) {
-                progressBadge.className = "text-xs font-black inline-block py-1 px-3 uppercase rounded-full text-purple-800 bg-purple-200";
-                progressBar.className = "shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-600 transition-all duration-500";
             } else {
                 progressBadge.className = "text-xs font-black inline-block py-1 px-3 uppercase rounded-full text-purple-800 bg-purple-200";
                 progressBar.className = "shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-600 transition-all duration-500";

@@ -20,6 +20,15 @@
             text-decoration: line-through;
             color: #9ca3af;
         }
+
+        /* אנימציית סיבוב מותאמת אישית ללוגו המטורלל */
+        .spin-slow {
+            animation: spin 8s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body class="cream-bg text-stone-800 min-h-screen pb-12 transition-all duration-300">
@@ -36,7 +45,7 @@
             <img src="https://lh3.googleusercontent.com/d/1BHxytxfATgrv3wpk_8slqpRX08p2Dzml" alt="טוביה הבוט" class="w-full h-full object-cover">
          </span>
 
-         <!-- הטקסט המעוצב שלך -->
+         <!-- הטקסט המעוצב -->
          <span class="text-right leading-tight block mr-4">
            <span class="block text-stone-900 group-hover:text-white transition-colors">שוחח עם טוביה הבוט של סהר</span>
            <span class="block text-[11px] font-semibold opacity-75 group-hover:opacity-90 text-stone-600 group-hover:text-purple-200 transition-colors">שיחת AI מתקדמת ב-Gemini Gems</span>
@@ -51,14 +60,21 @@
             
             <!-- לוגו וכותרת -->
             <div class="flex items-center gap-4">
-                <!-- לוגו REPATH מתוקן, משודרג ומוגדל -->
-                <div class="w-16 h-16 bg-purple-600 rounded-2xl p-3 shadow-md rotate-[-2deg] flex items-center justify-center shrink-0">
-                    <img src="https://drive.google.com/file/d/1v2wtAwnyV1_uYDxmqcZa8SRuIb0VTYQa/view?usp=drivesdk" alt="Repath Logo" class="w-full h-full object-contain filter brightness-0 invert">
+                
+                <!-- 🌀 אוואטר מטורלל מסתובב ברקע כמעט לבן 🌀 -->
+                <div class="relative group">
+                    <div class="absolute -inset-0.5 bg-gradient-to-r from-purple-400 to-amber-300 rounded-2xl blur-xs opacity-60 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="relative w-16 h-16 bg-stone-50 rounded-2xl p-2 shadow-md flex items-center justify-center overflow-hidden border border-stone-200">
+                        <img src="https://lh3.googleusercontent.com/d/1C3DR4Qd6rJX63AgBFxwWTqEZB__IF8Ne" alt="Crazy Rotating Icon" class="w-full h-full object-contain spin-slow group-hover:scale-110 transition-transform">
+                    </div>
                 </div>
 
                 <div>
-                    <h1 class="text-xl sm:text-2xl font-black text-stone-900 leading-tight">שליטה במסלולים וקווים (Repath) 🎨</h1>
-                    <p class="text-xs sm:text-sm text-stone-500 font-medium">מדריך משימות אינטראקטיבי ללימוד כלי העט, נקודות אחיזה ואיור וקטורי 🚀</p>
+                    <!-- כותרת נקייה ללא אימוג'ים -->
+                    <h1 class="text-xl sm:text-2xl font-black text-stone-900 leading-tight">
+                        שליטה במסלולים וקווים (Repath)
+                    </h1>
+                    <p class="text-xs sm:text-sm text-stone-500 font-medium">מדריך משימות אינטראקטיבי ללימוד כלי העט, נקודות אחיזה ואיור וקטורי</p>
                 </div>
             </div>
 
@@ -160,7 +176,7 @@
                     משימה 2 🌊
                 </button>
                 <button onclick="switchTab(3)" id="tab-btn-3" class="tab-btn font-black text-sm py-3 px-4 rounded-2xl transition-all duration-200 bg-stone-100 text-stone-600 hover:bg-stone-200">
-                    משימה 3 🤍
+                    הינשוף המתוקשב 🦉
                 </button>
                 <button onclick="switchTab(4)" id="tab-btn-4" class="tab-btn font-black text-sm py-3 px-4 rounded-2xl transition-all duration-200 bg-stone-100 text-stone-600 hover:bg-stone-200">
                     אתגר שועל פואטי 🦊
@@ -299,23 +315,49 @@
                 </div>
             </div>
 
-            <!-- TASK 3 -->
+            <!-- TASK 3: OWL TASK -->
             <div class="task-content bg-white rounded-3xl card-shadow border border-stone-100 overflow-hidden transition-all hidden" id="task-content-3">
                 <div class="p-6 bg-blue-50/60 border-b border-blue-100 flex justify-between items-center">
                     <div class="flex items-center gap-3">
-                        <span class="bg-blue-500 text-white font-black text-lg w-9 h-9 rounded-2xl flex items-center justify-center shadow-xs">3</span>
+                        <span class="bg-blue-600 text-white font-black text-lg w-9 h-9 rounded-2xl flex items-center justify-center shadow-xs">3</span>
                         <div>
-                            <h2 class="text-xl font-black text-stone-900">משימה 3: מעקב ושינוי נתיב של אייקון (Tracing & Repathing)</h2>
-                            <p class="text-xs sm:text-sm text-stone-500 font-semibold">נושא מרכזי: עבודה מעל שכבת עזר | זמן משוער: 25 דקות</p>
+                            <h2 class="text-xl font-black text-stone-900">משימה 3: הינשוף המתוקשב 🦉</h2>
+                            <p class="text-xs sm:text-sm text-stone-500 font-semibold">נושא מרכזי: עריכת קוד SVG ושינוי צבעי מילוי (Fill) | זמן משוער: 20 דקות</p>
                         </div>
                     </div>
-                    <span class="text-xs font-black bg-blue-100 text-blue-900 px-3 py-1.5 rounded-xl">משימת דיוק</span>
+                    <span class="text-xs font-black bg-blue-100 text-blue-900 px-3 py-1.5 rounded-xl">עריכת קוד וקטורי</span>
                 </div>
                 
                 <div class="p-6 space-y-6">
                     <p class="text-stone-700 font-semibold leading-relaxed">
-                        העבודה הנפוצה ביותר של מעצבים גרפיים היא "מעקב נתיב" (Tracing / Repathing) - לקיחת סקיצה מצוירת ביד או לוגו מטושטש, ומעבר עליהם עם כלי העט כדי להפוך אותם לקובץ וקטורי חד ומושלם.
+                        קובצי SVG אינם רק תמונות, הם למעשה **קוד קריא**! במשימה זו ניקח קובץ SVG של ינשוף מתוקשב, נפתח אותו ומשנה את ערכי ה-Hex Code של המילוי (Fill) כדי לעצב ינשוף חדש בלוק ייחודי.
                     </p>
+
+                    <!-- 🦉 חלונית מעוצבת לתמונת הינשוף המתוקשב 🦉 -->
+                    <div class="bg-gradient-to-br from-blue-900 via-indigo-900 to-stone-900 p-5 rounded-3xl text-white shadow-xl border border-blue-400/30">
+                        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-4 pb-3 border-b border-blue-500/30">
+                            <div class="flex items-center gap-2">
+                                <span class="text-2xl">🦉</span>
+                                <div>
+                                    <h3 class="font-black text-base text-blue-200">הינשוף המתוקשב - דגם היעד</h3>
+                                    <p class="text-xs text-stone-300 font-medium">כך נראה הינשוף המקורי לפני שינויי הצבע בקוד:</p>
+                                </div>
+                            </div>
+                            
+                            <!-- כפתור הורדת קובץ ה-SVG -->
+                            <a href="https://drive.google.com/file/d/1wt5ZFCbiC1gTakGlkySyIkkHhJZ_LRu3/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" 
+                               class="bg-emerald-500 hover:bg-emerald-600 text-white font-black px-4 py-2.5 rounded-xl shadow-lg transition-all duration-300 transform hover:scale-105 inline-flex items-center gap-2 text-xs border border-emerald-400/40">
+                                <span>הורד קובץ SVG למחשב</span>
+                                <svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                                </svg>
+                            </a>
+                        </div>
+                        
+                        <div class="relative w-full overflow-hidden rounded-2xl bg-black/40 p-3 border border-blue-500/20 flex items-center justify-center group">
+                            <img src="https://lh3.googleusercontent.com/d/1JbW1eBH4jvjip-Xd13_B6X6TDZ-Txd66" alt="הינשוף המתוקשב" class="max-h-72 w-auto object-contain rounded-xl shadow-2xl transition-transform duration-500 group-hover:scale-105">
+                        </div>
+                    </div>
 
                     <!-- Steps List -->
                     <div class="space-y-3">
@@ -324,35 +366,35 @@
                         <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-100 hover:bg-purple-50/40 cursor-pointer transition">
                             <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded-lg border-stone-300 text-purple-600 focus:ring-purple-500" onchange="updateProgress()">
                             <span class="text-stone-700 text-sm font-bold leading-relaxed">
-                                <strong>צעד 1:</strong> מצאו או ייבאו למסמך תמונה פשוטה של <strong>לב</strong> או <strong>ענן</strong> מהאינטרנט. הקטינו את השקיפות (Opacity) של השכבה ל-40% ונעלו אותה כדי שלא תזוז.
+                                <strong>צעד 1:</strong> לחצו על כפתור <strong>"הורד קובץ SVG למחשב"</strong> בחלונית הינשוף ושמרו את הקובץ במחשב שלכם.
                             </span>
                         </label>
 
                         <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-100 hover:bg-purple-50/40 cursor-pointer transition">
                             <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded-lg border-stone-300 text-purple-600 focus:ring-purple-500" onchange="updateProgress()">
                             <span class="text-stone-700 text-sm font-bold leading-relaxed">
-                                <strong>צעד 2:</strong> בחרו בכלי העט (Pen Tool) והתחילו לצייר מעל התבנית המטושטשת. אם בחרתם בלב, התחילו מהשפיץ התחתון של הלב (נקודת פינה ישרה - קליק בודד).
+                                <strong>צעד 2:</strong> פתחו את קובץ ה-SVG באמצעות עורך טקסט (כגון Notepad, VS Code) או ישירות בתוכנת הציור הוקטורית Repath / Illustrator.
                             </span>
                         </label>
 
                         <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-100 hover:bg-purple-50/40 cursor-pointer transition">
                             <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded-lg border-stone-300 text-purple-600 focus:ring-purple-500" onchange="updateProgress()">
                             <span class="text-stone-700 text-sm font-bold leading-relaxed">
-                                <strong>צעד 3:</strong> עברו לקשת השמאלית של הלב, עשו קליק וגררו שמאלה ולמעלה כדי לייצר את הקימור של ראש הלב.
+                                <strong>צעד 3:</strong> חפשו בתוך הקוד את תגיות ה-Fill שמגדירות את צבע המילוי המקורי: <code class="px-2 py-0.5 bg-stone-100 border border-stone-300 rounded text-purple-700 font-mono font-bold text-xs">fill="#000000"</code> (שחור).
                             </span>
                         </label>
 
                         <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-100 hover:bg-purple-50/40 cursor-pointer transition">
                             <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded-lg border-stone-300 text-purple-600 focus:ring-purple-500" onchange="updateProgress()">
                             <span class="text-stone-700 text-sm font-bold leading-relaxed">
-                                <strong>צעד 4:</strong> כעת אנחנו צריכים להגיע לשקע המרכזי של הלב - שבו יש זווית חדה! החזיקו את מקש <kbd class="px-1.5 py-0.5 bg-white border border-stone-300 rounded text-xs font-black">Alt</kbd> ולחצו על הנקודה האחרונה שיצרתם כדי "לחתוך" את אחת הידיות שלה ולמנוע קימור בצעד הבא.
+                                <strong>צעד 4:</strong> שנו את קוד הצבע למשהו חדש! למשל, החליפו את <code class="px-1.5 py-0.5 bg-stone-100 border border-stone-300 rounded text-stone-800 font-mono text-xs">000000</code> בקוד הצבע הכחול-עמוק <code class="px-1.5 py-0.5 bg-blue-100 border border-blue-300 rounded text-blue-800 font-mono font-bold text-xs">#000880</code> או בכל קוד הופכי מגניב אחר.
                             </span>
                         </label>
 
                         <label class="flex items-start gap-3 p-3.5 rounded-2xl border border-stone-100 hover:bg-purple-50/40 cursor-pointer transition">
                             <input type="checkbox" class="step-checkbox mt-1 h-5 w-5 rounded-lg border-stone-300 text-purple-600 focus:ring-purple-500" onchange="updateProgress()">
                             <span class="text-stone-700 text-sm font-bold leading-relaxed">
-                                <strong>צעד 5:</strong> המשיכו לצייר את חצי הלב השני בצורה סימטרית וסגרו את הצורה בנקודת ההתחלה התחתונה. כעת הסתירו את שכבת העזר המקורית ותראו איזה לב וקטורי מדהים יצרתם!
+                                <strong>צעד 5:</strong> שמרו את קובץ ה-SVG, פתחו אותו בדפדפן וצפו בינשוף המתוקשב החדש והמעוצב שלכם!
                             </span>
                         </label>
                     </div>
@@ -360,12 +402,12 @@
                     <!-- Visual Tip -->
                     <div class="bg-[#FAF7F0] p-4 rounded-2xl border-l-4 border-blue-500 text-stone-800 text-xs font-bold leading-relaxed flex gap-3 items-center">
                         <span class="text-2xl">💡</span>
-                        <span><strong>כלל פחות זה יותר:</strong> ככל שתשתמשו בפחות נקודות אחיזה לציור הצורה שלכם, כך המסלול הוקטורי יהיה חלק, נקי ומקצועי יותר ללא בליטות לא רצויות.</span>
+                        <span><strong>קוד Hex שימושי:</strong> צבעי Hex מורכבים משני תווים לאדום (R), שני תווים לירק (G) ושני תווים לכחול (B). למשל <code class="px-1.5 py-0.5 bg-white border border-stone-300 rounded text-xs font-mono font-bold">#000880</code> נותן כחול עוצמתי!</span>
                     </div>
                 </div>
             </div>
 
-            <!-- TASK 4: CHALLENGE -->
+            <!-- TASK 4: CHALLENGE WITH FOX REFERENCE SCHEMA -->
             <div class="task-content bg-white rounded-3xl card-shadow border border-stone-100 overflow-hidden transition-all hidden" id="task-content-4">
                 <div class="p-6 bg-purple-50/60 border-b border-purple-100 flex justify-between items-center">
                     <div class="flex items-center gap-3">
@@ -382,6 +424,28 @@
                     <p class="text-stone-700 font-semibold leading-relaxed">
                         במשימה המסכמת הזו, נשתמש בנקודות אחיזה משותפות כדי לצייר איור אוריגמי יפהפה של שועל. איור אוריגמי בנוי ממספר רב של משולשים ומרובעים צמודים היוצרים יחד תלת-מימד עדין בעזרת גוונים שונים.
                     </p>
+
+                    <!-- 🦊 חלונית מעוצבת - סכמת רפרנס של השועל 🦊 -->
+                    <div class="bg-gradient-to-br from-purple-900 via-indigo-900 to-stone-900 p-5 rounded-3xl text-white shadow-xl border border-purple-400/30">
+                        <div class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-4 pb-3 border-b border-purple-500/30">
+                            <div class="flex items-center gap-2">
+                                <span class="text-2xl">📐</span>
+                                <div>
+                                    <h3 class="font-black text-base text-purple-200">סכמת מודל לחיקוי - שועל וקטורי</h3>
+                                    <p class="text-xs text-stone-300 font-medium">השתמשו ברפרנס זה כדי להבין את חלוקת המשולשים והקווים:</p>
+                                </div>
+                            </div>
+                            <a href="https://lh3.googleusercontent.com/d/1me05ZfHGWlGDb_Bbf2VRIsUgxFuw-0to" target="_blank" rel="noopener noreferrer" 
+                               class="text-xs bg-purple-600/80 hover:bg-purple-500 text-white font-bold px-3 py-2 rounded-xl backdrop-blur-xs transition flex items-center gap-1.5 shrink-0 border border-purple-400/40 shadow-sm">
+                                <span>הגדל במסך מלא</span>
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                            </a>
+                        </div>
+                        
+                        <div class="relative w-full overflow-hidden rounded-2xl bg-black/40 p-2 border border-purple-500/20 flex items-center justify-center group">
+                            <img src="https://lh3.googleusercontent.com/d/1me05ZfHGWlGDb_Bbf2VRIsUgxFuw-0to" alt="סכמת שועל רפרנס" class="max-h-80 w-auto object-contain rounded-xl shadow-lg transition-transform duration-500 group-hover:scale-102">
+                        </div>
+                    </div>
 
                     <!-- Steps List -->
                     <div class="space-y-3">
